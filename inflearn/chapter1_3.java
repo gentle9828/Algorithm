@@ -1,6 +1,7 @@
 package inflearn;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class chapter1_3 {
     public static void main(String[] args) throws IOException {
@@ -10,13 +11,9 @@ public class chapter1_3 {
 
         String result = "";
 
+        result = str[0];
         for(int i = 0; i < str.length; i++) {
-            result = str[0];
             if(result.length() < str[i].length()) {
-                result = str[i];
-            }
-
-            if(str[i].length() == result.length()) {
                 result = str[i];
             }
         }
@@ -26,6 +23,5 @@ public class chapter1_3 {
 
         bw.close();
         br.close();
-
     }
 }

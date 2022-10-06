@@ -9,8 +9,8 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         ArrayList<Integer> array = new ArrayList<>();
-        for(int i = 0; i < array.size(); i++) {
-            st = new StringTokenizer(br.readLine());
+        st = new StringTokenizer(br.readLine());
+        if(st.hasMoreTokens()) {
             array.add(Integer.parseInt(st.nextToken()));
         }
 
