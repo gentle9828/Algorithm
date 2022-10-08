@@ -16,8 +16,8 @@ class Calculator {
             System.out.println("저장된 결과값이 없습니다.");
         } else {
             System.out.print("저장된 결과값 : ");
-            for(int i = 0; i < result.size(); i++) {
-                System.out.print(result.get(i) + " ");
+            for(int pos = 0; pos < result.size(); pos++) {
+                System.out.print(result.get(pos) + " ");
             }
             System.out.println();
         }
