@@ -1,43 +1,64 @@
 package task;
 
+import java.util.ArrayList;
+
 class Calculator {
-    static int add(int a, int b) {
-        int result = a + b;
-        return result;
+    static ArrayList<Integer> result = new ArrayList<>(10);
+
+    static int pos;
+
+    public Calculator(int size) {
+        ArrayList<Integer> result = new ArrayList<>(size);
     }
 
-    static int add(short a, short b) {
-        int result = a + b;
-        return result;
+    public static void prevResult() {
+        if(result.size() == 0) {
+            System.out.println("저장된 결과값이 없습니다.");
+        } else {
+            System.out.print("저장된 결과값 : ");
+            for(int i = 0; i < result.size(); i++) {
+                System.out.print(result.get(i) + " ");
+            }
+            System.out.println();
+        }
     }
 
-    static int add(byte a, byte b) {
-        int result = a + b;
-        return result;
+    public static int exec(int firstNumber, int secondNumber, char operator) {
+        int answer = 0;
+        switch(operator) {
+            case '+' -> answer = firstNumber + secondNumber;
+            case '-' -> answer = firstNumber - secondNumber;
+            case '*' -> answer = firstNumber * secondNumber;
+            case '/' -> answer = firstNumber / secondNumber;
+        }
+        result.add(answer);
+        return answer;
     }
 
-    static int add(int a, int b, int c) {
-        int result = a + b + c;
-        return result;
-    }
-
-    static int add(byte a, byte b, byte c) {
-        int result = a + b + c;
-        return result;
-    }
-
-    static int add(short a, short b, short c) {
-        int result = a + b + c;
-        return result;
+    public static int exec(int firstNumber, int secondNumber, String operator) {
+        int answer = 0;
+        switch(operator) {
+            case "+" -> answer = firstNumber + secondNumber;
+            case "-" -> answer = firstNumber - secondNumber;
+            case "*" -> answer = firstNumber * secondNumber;
+            case "/" -> answer = firstNumber / secondNumber;
+        }
+        result.add(answer);
+        return answer;
     }
 }
 
 public class week5_2 {
     public static void main(String[] args) {
-        Calculator c1 = new Calculator();
-        int a = 10;
-        int b = 7;
-        int c = 5;
-        System.out.println(c1.add(a, b, c));
+        Calculator calc = new Calculator(3);
+        calc.prevResult();
+        System.out.println("5 + 7 = " + calc.exec(5, 7, '+'));
+        System.out.println("5 + 7 = " + calc.exec(5, 7, "+"));
+        calc.exec(5, 3, '-');
+        calc.exec(9, 3, '/');
+        calc.prevResult();
+        calc.exec(10,5, '*');
+        calc.prevResult();
+
     }
 }
