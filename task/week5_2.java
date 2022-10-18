@@ -3,12 +3,15 @@ package task;
 import java.util.ArrayList;
 
 class Calculator {
-    static ArrayList<Integer> result = new ArrayList<>(10);
-
+    static ArrayList<Integer> result;
     static int pos;
 
+    public Calculator() {
+        result = new ArrayList<>(10);
+    }
+
     public Calculator(int size) {
-        ArrayList<Integer> result = new ArrayList<>(size);
+        result = new ArrayList<>(size);
     }
 
     public static void prevResult() {
@@ -46,6 +49,8 @@ class Calculator {
         result.add(answer);
         return answer;
     }
+
+
 }
 
 public class week5_2 {
@@ -53,11 +58,8 @@ public class week5_2 {
         Calculator calc = new Calculator(3);
         calc.prevResult();
         System.out.println("5 + 7 = " + calc.exec(5, 7, '+'));
-        System.out.println("5 + 7 = " + calc.exec(5, 7, "+"));
         calc.exec(5, 3, '-');
         calc.exec(9, 3, '/');
-        calc.prevResult();
-        calc.exec(10,5, '*');
         calc.prevResult();
 
     }
