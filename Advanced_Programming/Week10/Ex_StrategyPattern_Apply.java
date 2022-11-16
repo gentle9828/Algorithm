@@ -3,18 +3,18 @@ package Advanced_Programming.Week10;
 class Moving {
     private MovableStrategy movableStrategy;
 
-    public void move(){
+    public void move() {
         movableStrategy.move();
     }
 
-    public void setMovableStrategy(MovableStrategy movableStrategy){
+    public void setMovableStrategy(MovableStrategy movableStrategy) {
         this.movableStrategy = movableStrategy;
     }
 }
-class Bus extends Moving{
+class Bus extends Moving {
 
 }
-class Train extends Moving{
+class Train extends Moving {
 
 }
 
